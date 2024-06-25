@@ -7,26 +7,27 @@ public class Iphone implements ReprodutorMusical, AparelhoTelefonico, NavegadorI
 
     public static void main(String[] args) {
         Iphone meuIPhone = new Iphone();
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        try (Scanner scanner = new Scanner(System.in).useLocale(Locale.US)) {
+            // Testando as funcionalidades do reprodutor musical
+            meuIPhone.tocar();
+            meuIPhone.pausar();
+            System.out.println("Selecione a música");
+            String musica = scanner.next();
+            meuIPhone.selecionarMusica(musica);
 
-        // Testando as funcionalidades do reprodutor musical
-        meuIPhone.tocar();
-        meuIPhone.pausar();
-        System.out.println("Selecione a música");
-        String musica = scanner.next();
-        meuIPhone.selecionarMusica(musica);
+            // Testando as funcionalidades do aparelho telefônico
+            System.out.println("Digite o núemro do telefone");
+            String numero = scanner.next();
+            meuIPhone.ligar(numero);
+            meuIPhone.atender();
+            meuIPhone.iniciarCorreioVoz();
 
-        // Testando as funcionalidades do aparelho telefônico
-        System.out.println("Digite o núemro do telefone");
-        String numero = scanner.next();
-        meuIPhone.ligar(numero);
-        meuIPhone.atender();
-        meuIPhone.iniciarCorreioVoz();
+            // Testando as funcionalidades do navegador na internet
+            System.out.println("Digite a url do site");
+            String url = scanner.next();
+            meuIPhone.exibirPagina(url);
+        }
 
-        // Testando as funcionalidades do navegador na internet
-        System.out.println("Digite a url do site");
-        String url = scanner.next();
-        meuIPhone.exibirPagina(url);
         meuIPhone.adicionarNovaAba();
         meuIPhone.atualizarPagina();
     }
