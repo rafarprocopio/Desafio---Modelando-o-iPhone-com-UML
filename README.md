@@ -30,9 +30,9 @@ class NavegadorInternet {
     iPhone --> NavegadorInternet
 ```
 
-## Codando
+# Codando
 
-# Interfaces
+## Interfaces
 
 ```java
 package DispositivoIphone;
@@ -62,7 +62,7 @@ public interface AparelhoTelefonico {
 
 }
 ```
-# Implements
+## Implements
 
 ```java
 package DispositivoIphone;
